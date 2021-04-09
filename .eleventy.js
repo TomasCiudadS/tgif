@@ -1,7 +1,11 @@
+const CleanCSS = require("clean-css");
+
 module.exports = (config) => {
-    // specify folders to be copied to the output folder
-    config.addPassthroughCopy('./src/js/');
-    config.addPassthroughCopy('./src/css/');
+    config.addFilter("cssmin", function(code) {
+        return new CleanCSS({}).minify(code).styles;
+    });
+
+    config.addPassthroughCopy('src/img');
 
     return {
         pathPrefix: '/tgif/',
@@ -10,6 +14,7 @@ module.exports = (config) => {
         dir: {
             input: 'src',    // default: '.'
             output: 'public' // default: '_site'
-        }
+        },
+        passthroughFileCopy: true
     }
 };
