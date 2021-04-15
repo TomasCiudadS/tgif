@@ -1,0 +1,16 @@
+name: A good weekend
+on:
+  schedule:
+    - cron:  '*/5 * * * 4'
+  workflow_dispatch:
+
+jobs:
+  new:
+    name: A good weekend
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: someimportantcompany/github-actions-slack-message@v1
+        with:
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          text: "Ya puedes ver el TGIF de hoy en: https://thingso2.github.io/tgif/"
+          color: purple
