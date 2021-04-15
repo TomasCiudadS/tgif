@@ -1,4 +1,4 @@
-# TGIF
+# Thank god it's Friday!
 
 ## ¿Qué es?
 
