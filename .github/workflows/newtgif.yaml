@@ -17,6 +17,8 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Create a new tgif day
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_KINGKONG }}
 
       - uses: someimportantcompany/github-actions-slack-message@v1
         with:
