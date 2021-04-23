@@ -1,6 +1,6 @@
 ---
 tags: tgif
-title: "TGIF del día 202X-XX-XX"
+title: "TGIF del día ${DATE}"
 ---
 
 <header style="background-color: black;">

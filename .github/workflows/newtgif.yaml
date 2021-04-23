@@ -1,7 +1,7 @@
 name: Create a new tgif day
 on:
   schedule:
-    - cron:  '0 7 * * 5'
+    - cron:  '0 5 * * 5'
   workflow_dispatch:
 
 jobs:
@@ -12,13 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - run: cp src/example.md src/`date +"%Y-%m-%d"`.md
+      - run: ./newtgif.sh
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Add changes" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          commit_message: Create a new tgif day
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_KINGKONG }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: someimportantcompany/github-actions-slack-message@v1
         with:
