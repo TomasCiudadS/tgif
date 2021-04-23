@@ -26,8 +26,12 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
       - uses: someimportantcompany/github-actions-slack-message@v1
         with:
           webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
-          text: "Completa el TGIF de hoy en: https://github.com/ThingsO2/tgif/blob/main/src/example.md"
+          text: "Completa el TGIF de hoy en: https://github.com/ThingsO2/tgif/blob/main/src/${{ steps.date.outputs.date }}.md"
           color: good
