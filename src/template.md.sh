@@ -7,7 +7,7 @@ title: "TGIF del día ${DATE}"
 <a href="{{ '/' | url }}"><img src="{{ '/img/logo.png' | url }}" alt="MonoM logo"></a>
 </header>
 
-# Example
+# TGIF del día ${DATE}
 
 ## Data Science Squad
 
