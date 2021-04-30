@@ -9,14 +9,16 @@ title: "TGIF del día ${DATE}"
 
 # TGIF del día ${DATE}
 
-## Data Science Squad
+## Data Science
 
-## Edge Squad
+## Edge
 
-## Data Intake Squad
+## Data Intake
 
-## Web App Squad
+## Web App
 
-## Infra Squad
+## Infra
 
-## UX/UI Squad
+## UX/UI
+
+## Comercial
