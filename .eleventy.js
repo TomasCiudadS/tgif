@@ -6,6 +6,7 @@ module.exports = (config) => {
     });
 
     config.addPassthroughCopy('src/img');
+    config.addPassthroughCopy('src/gifs');
 
     return {
         pathPrefix: '/tgif/',
